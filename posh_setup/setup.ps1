@@ -1,12 +1,3 @@
-Install-Module oh-my-posh -Scope CurrentUser -Force
-Install-Module posh-git -Scope CurrentUser -Force
-
-Import-Module oh-my-posh
-
-if (!(Test-Path -Path $PROFILE.CurrentUserAllHosts)){
-  New-Item -ItemType File -Path $PROFILE.CurrentUserAllHosts -Force
-}
-
 function Add-ToCurrentUserAllHostsProfile{
 
     param (
@@ -16,8 +7,15 @@ function Add-ToCurrentUserAllHostsProfile{
     $profile_content = Get-Content $PROFILE.CurrentUserAllHosts
     $content_in_profile = $profile_content | ForEach-Object{$_ -eq $ContentToAdd}
     if($content_in_profile -notcontains $true){
-        Add-Content -Path $PROFILE.CurrentUserAllHosts -Value $ContentToAdd
+        Add-Content -Path $PROFILE.CurrentUserAllHosts -Value $ContentToAdd -Encoding UTF8
     }
+}
+
+Install-Module oh-my-posh -Scope CurrentUser -Force
+Install-Module posh-git -Scope CurrentUser -Force
+
+if (!(Test-Path -Path $PROFILE.CurrentUserAllHosts)){
+  New-Item -ItemType File -Path $PROFILE.CurrentUserAllHosts -Force > $null
 }
 # copy to home dir so we don't lost the configuration if repo is deleted after install
 Copy-Item "$PSScriptRoot\.plain.omp.json" -Destination "~"
