@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "style": "plain",
+          "type": "root"
+        },
+        {
+          "style": "plain",
+          "type": "session",
+          "properties": {
+            "prefix": "",
+            "postfix": "",
+            "display_host": false
+          }
+        },
+        {
+          "properties": {
+            "prefix": "[",
+            "postfix": "] ",
+            "style": "full",
+            "enable_hyperlink": true
+          },
+          "style": "plain",
+          "type": "path"
+        },
+        {
+          "type": "poshgit",
+          "style": "plain",
+          "properties": {
+            "prefix": ""
+          }
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "properties": {
+            "prefix": "py[",
+            "postfix": "] ",
+            "display_virtual_env": true,
+            "display_default": false,
+            "display_version": false,
+            "display_mode": "environment"
+          }
+        },
+        {
+          "foreground": "#e74856",
+          "properties": {
+            "prefix": "",
+            "template": "[{{ .Code }}]"
+          },
+          "style": "plain",
+          "type": "exit"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "properties": {
+            "prefix": "",
+            "text": ">"
+          }
+        }
+      ],
+      "type": "prompt"
+    }
+  ]
+}
