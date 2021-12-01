@@ -11,12 +11,14 @@ function Add-ToCurrentUserAllHostsProfile{
     }
 }
 
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module oh-my-posh -Scope CurrentUser -Force
 Install-Module posh-git -Scope CurrentUser -Force
 
 if (!(Test-Path -Path $PROFILE.CurrentUserAllHosts)){
   New-Item -ItemType File -Path $PROFILE.CurrentUserAllHosts -Force > $null
 }
+
 # copy to home dir so we don't lost the configuration if repo is deleted after install
 Copy-Item "$PSScriptRoot\.plain.omp.json" -Destination "~"
 
