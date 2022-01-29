@@ -5,8 +5,13 @@
       "alignment": "left",
       "segments": [
         {
+          "type": "root",
           "style": "plain",
-          "type": "root"
+          "properties": {
+            "prefix": "",
+            "postfix": " ",
+            "root_icon": "\uF0E7"
+          }
         },
         {
           "style": "plain",
@@ -21,8 +26,7 @@
           "properties": {
             "prefix": "[",
             "postfix": "] ",
-            "style": "full",
-            "enable_hyperlink": true
+            "style": "full"
           },
           "style": "plain",
           "type": "path"
@@ -35,18 +39,6 @@
           }
         },
         {
-          "type": "python",
-          "style": "plain",
-          "properties": {
-            "prefix": "py[",
-            "postfix": "] ",
-            "display_virtual_env": true,
-            "display_default": false,
-            "display_version": false,
-            "display_mode": "environment"
-          }
-        },
-        {
           "foreground": "#e74856",
           "properties": {
             "prefix": "",
@@ -54,7 +46,15 @@
           },
           "style": "plain",
           "type": "exit"
-        },
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "type": "prompt",
+      "newline": true,
+      "alignment": "left",
+      "segments": [
         {
           "type": "text",
           "style": "plain",
@@ -62,9 +62,7 @@
             "prefix": "",
             "text": ">"
           }
-        }
-      ],
-      "type": "prompt"
+        }]
     }
   ]
 }
