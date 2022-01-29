@@ -14,3 +14,7 @@ refreshenv
 curl.exe "https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe" --output rustup-init.exe
 .\rustup-init.exe --profile default -y
 rm .\rustup-init.exe
+
+pip install pipx
+pipx ensurepath
+pipx install poetry
