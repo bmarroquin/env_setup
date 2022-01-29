@@ -3,6 +3,7 @@ refreshenv
 code --install-extension rust-lang.rust
 code --install-extension ms-vscode.powershell
 code --install-extension ms-python.python
+code --install-extension ms-vscode.cpptools
 
 choco install git --params "/NoShellIntegration /Editor:VisualStudioCode"
 choco install python3 --version=3.9.10 --params "/InstallDir:C:\ProgramData\python\python39"
